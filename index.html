@@ -55,8 +55,9 @@ h2.giant{font-weight:400;font-size:clamp(40px,6.4vw,92px);letter-spacing:-.045em
 .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,2.4vw,32px);background:var(--panel);border:1.5px solid var(--line)}
 .face.back{transform:rotateY(180deg);padding:0;background:var(--cyan-deep);align-items:stretch}
 .face.back .ov{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;gap:12px;height:100%;
-  padding:clamp(20px,2.4vw,32px);background:linear-gradient(180deg,rgba(8,9,9,.74) 0%,rgba(8,9,9,.12) 42%,rgba(8,9,9,.84) 100%)}
-.face.back .label{color:#fff}
+  padding:clamp(20px,2.4vw,32px);background:linear-gradient(180deg,rgba(8,9,9,.74) 0%,rgba(8,9,9,.1) 26%,rgba(8,9,9,.82) 55%,rgba(8,9,9,.95) 100%)}
+.face.back .label{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.75)}
+.face.back .sub{color:rgba(255,255,255,.88)}
 .face.back .meta .tc{color:#fff;opacity:.85}
 .face.back .flipmark{color:#fff;border-color:rgba(255,255,255,.75)}
 .flip:hover .face.back .flipmark{background:#fff;color:var(--panel);border-color:#fff}
@@ -143,7 +144,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
             <span class="meta"><span class="tc">prep</span><span class="flipmark">&#8634; фото</span></span>
             <span class="label">организация съёмок<span class="sub">раскадровки, поиск команды, подбор локаций, документальное сопровождение, администрирование на&nbsp;площадке</span></span>
           </span>
-          <span class="face back"><img src="images/work-01.jpg" alt="съёмочная группа на локации" loading="lazy"><span class="ov"><span class="meta"><span class="tc">prep</span><span class="flipmark">&#8634; назад</span></span><span class="label">организация съёмок</span></span></span>
+          <span class="face back"><img src="images/work-01.jpg" alt="съёмочная группа на локации" loading="lazy"><span class="ov"><span class="meta"><span class="tc">prep</span><span class="flipmark">&#8634; назад</span></span><span class="label">организация съёмок<span class="sub">раскадровки, поиск команды, подбор локаций, документальное сопровождение, администрирование на&nbsp;площадке</span></span></span></span>
         </span>
       </button>
       <button class="flip" type="button" aria-pressed="false">
@@ -152,7 +153,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
             <span class="meta"><span class="tc">rec</span><span class="flipmark">&#8634; фото</span></span>
             <span class="label">съёмка<span class="sub">механик камеры, оператор, гаффер, осветитель, звукорежиссёр, экспорт материала — всё в&nbsp;одном лице</span></span>
           </span>
-          <span class="face back"><img src="images/work-02.jpg" alt="режиссёр с хлопушкой на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">rec</span><span class="flipmark">&#8634; назад</span></span><span class="label">съёмка</span></span></span>
+          <span class="face back"><img src="images/work-02.jpg" alt="режиссёр с хлопушкой на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">rec</span><span class="flipmark">&#8634; назад</span></span><span class="label">съёмка<span class="sub">механик камеры, оператор, гаффер, осветитель, звукорежиссёр, экспорт материала — всё в&nbsp;одном лице</span></span></span></span>
         </span>
       </button>
       <button class="flip" type="button" aria-pressed="false">
@@ -161,7 +162,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
             <span class="meta"><span class="tc">edit only</span><span class="flipmark">&#8634; фото</span></span>
             <span class="label">монтаж<span class="sub">нарезка видео, наложение звуковых и&nbsp;визуальных эффектов, цветокоррекция и&nbsp;двухмерная графика</span></span>
           </span>
-          <span class="face back"><img src="images/work-03.jpg" alt="монтажная станция на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">edit only</span><span class="flipmark">&#8634; назад</span></span><span class="label">монтаж</span></span></span>
+          <span class="face back"><img src="images/work-03.jpg" alt="монтажная станция на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">edit only</span><span class="flipmark">&#8634; назад</span></span><span class="label">монтаж<span class="sub">нарезка видео, наложение звуковых и&nbsp;визуальных эффектов, цветокоррекция и&nbsp;двухмерная графика</span></span></span></span>
         </span>
       </button>
                       </div>
@@ -193,7 +194,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
             <span class="meta"><span class="tc">fpv</span><span class="flipmark">&#8634; фото</span></span>
             <span class="label">съёмка на&nbsp;fpv-дрон<span class="sub">сотни часов налёта, но&nbsp;пока это под запретом</span></span>
           </span>
-          <span class="face back"><img src="images/past-03.jpg" alt="полёт fpv-дрона на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">fpv</span><span class="flipmark">&#8634; назад</span></span><span class="label">съёмка на&nbsp;fpv-дрон</span></span></span>
+          <span class="face back"><img src="images/past-03.jpg" alt="полёт fpv-дрона на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">fpv</span><span class="flipmark">&#8634; назад</span></span><span class="label">съёмка на&nbsp;fpv-дрон<span class="sub">сотни часов налёта, но&nbsp;пока это под запретом</span></span></span></span>
         </span>
       </button>
     </div>
