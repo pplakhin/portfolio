@@ -54,7 +54,13 @@ h2.giant{font-weight:400;font-size:clamp(40px,6.4vw,92px);letter-spacing:-.045em
 .flip.is-flipped .inner{transform:rotateY(180deg)}
 .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,2.4vw,32px);background:var(--panel);border:1.5px solid var(--line)}
 .face.back{transform:rotateY(180deg);padding:0;background:var(--cyan-deep);align-items:stretch}
-.face.back img{width:100%;height:100%;object-fit:cover;display:block}
+.face.back .ov{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;gap:12px;height:100%;
+  padding:clamp(20px,2.4vw,32px);background:linear-gradient(180deg,rgba(8,9,9,.74) 0%,rgba(8,9,9,.12) 42%,rgba(8,9,9,.84) 100%)}
+.face.back .label{color:#fff}
+.face.back .meta .tc{color:#fff;opacity:.85}
+.face.back .flipmark{color:#fff;border-color:rgba(255,255,255,.75)}
+.flip:hover .face.back .flipmark{background:#fff;color:var(--panel);border-color:#fff}
+.face.back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .face.back .ph{display:flex;flex-direction:column;justify-content:flex-end;gap:6px;height:100%;padding:clamp(20px,2.4vw,32px);background:
   repeating-linear-gradient(135deg,rgba(63,224,216,.14) 0 14px,transparent 14px 28px),var(--cyan-deep)}
 .face.back .ph b{font-weight:400;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.03em}
@@ -63,10 +69,14 @@ h2.giant{font-weight:400;font-size:clamp(40px,6.4vw,92px);letter-spacing:-.045em
 .face.pink .sub,.face.cyan .sub{color:rgba(21,23,22,.72)}
 .face .meta{display:flex;width:100%;justify-content:space-between;align-items:center;gap:10px}
 .face .meta .tc{color:var(--cyan)}
-.face .flipmark{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.face .flipmark{display:inline-block;font-family:var(--mono);font-size:clamp(13px,1.15vw,16px);letter-spacing:.03em;
+  color:var(--cyan);border:1px solid currentColor;border-radius:999px;padding:.3em .75em;white-space:nowrap}
+.flip:hover .flipmark{background:var(--cyan);color:var(--panel);border-color:var(--cyan)}
 .face.cyan{background:var(--cyan);border-color:var(--cyan);color:var(--panel)}
 .face.pink{background:var(--magenta);border-color:var(--magenta);color:var(--panel)}
-.face.cyan .meta .tc,.face.cyan .flipmark,.face.pink .meta .tc,.face.pink .flipmark{color:var(--panel);opacity:.75}
+.face.cyan .meta .tc,.face.pink .meta .tc{color:var(--panel);opacity:.75}
+.face.cyan .flipmark,.face.pink .flipmark{color:var(--panel)}
+.flip:hover .face.cyan .flipmark,.flip:hover .face.pink .flipmark{background:var(--panel);color:#fff;border-color:var(--panel)}
 
 /* dark principle panel */
 .dark{background:var(--panel);margin-top:clamp(80px,10vw,140px)}
@@ -108,8 +118,8 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
   <header>
     <a class="logo" href="#top" id="top"><i>▶</i>павел плахин</a>
     <nav aria-label="разделы">
-      <a href="#past">предыдущий опыт</a>
       <a href="#work">что беру в работу</a>
+      <a href="#past">предыдущий опыт</a>
       <a href="#how">как работаю</a>
     </nav>
     <a class="hcta" href="#contact"><span class="mark m2">написать мне</span></a>
@@ -123,71 +133,71 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
     </div>
   </section>
 
-  <section class="sec" id="past">
-    <div class="head-row"><h2 class="giant">предыдущий опыт</h2><span class="tc">нажми на плитку — покажу кадр</span></div>
-    <div class="grid">
-      <button class="flip" type="button" aria-pressed="false">
-        <span class="inner">
-          <span class="face front">
-            <span class="meta"><span class="tc">rec</span><span class="flipmark">↺ фото</span></span>
-            <span class="label">продюсирование youtube-канала крупного криптовалютного медиа: с&nbsp;1 500 подписчиков до&nbsp;30 000 за&nbsp;год</span>
-          </span>
-          <span class="face back"><img src="images/past-01.jpg" alt="кадр с ютуб-канала криптомедиа" loading="lazy"></span>
-        </span>
-      </button>
-      <button class="flip" type="button" aria-pressed="false">
-        <span class="inner">
-          <span class="face front cyan">
-            <span class="meta"><span class="tc">mcu</span><span class="flipmark">↺ фото</span></span>
-            <span class="label">продюсирование рекламных и&nbsp;корпоративных видео в&nbsp;продакшене: втб, норникель, case, токио-сити</span>
-          </span>
-          <span class="face back"><img src="images/past-02.jpg" alt="съёмка рекламного ролика case в павильоне" loading="lazy"></span>
-        </span>
-      </button>
-      <button class="flip" type="button" aria-pressed="false">
-        <span class="inner">
-          <span class="face front">
-            <span class="meta"><span class="tc">fpv</span><span class="flipmark">↺ фото</span></span>
-            <span class="label">съёмка на&nbsp;fpv-дрон<span class="sub">сотни часов налёта, но&nbsp;пока это под запретом</span></span>
-          </span>
-          <span class="face back"><img src="images/past-03.jpg" alt="полёт fpv-дрона на съёмке" loading="lazy"></span>
-        </span>
-      </button>
-    </div>
-  </section>
-
   <section class="sec" id="work">
     <div class="head-row"><h2 class="giant">что беру в работу</h2><span class="tc">полный цикл или отдельный этап</span></div>
     <div class="grid">
       <button class="flip" type="button" aria-pressed="false">
         <span class="inner">
           <span class="face front">
-            <span class="meta"><span class="tc">prep</span><span class="flipmark">↺ фото</span></span>
+            <span class="meta"><span class="tc">prep</span><span class="flipmark">&#8634; фото</span></span>
             <span class="label">организация съёмок<span class="sub">раскадровки, поиск команды, подбор локаций, документальное сопровождение, администрирование на&nbsp;площадке</span></span>
           </span>
-          <span class="face back"><img src="images/work-01.jpg" alt="съёмочная группа на локации" loading="lazy"></span>
+          <span class="face back"><img src="images/work-01.jpg" alt="съёмочная группа на локации" loading="lazy"><span class="ov"><span class="meta"><span class="tc">prep</span><span class="flipmark">&#8634; назад</span></span><span class="label">организация съёмок</span></span></span>
         </span>
       </button>
       <button class="flip" type="button" aria-pressed="false">
         <span class="inner">
           <span class="face front">
-            <span class="meta"><span class="tc">rec</span><span class="flipmark">↺ фото</span></span>
+            <span class="meta"><span class="tc">rec</span><span class="flipmark">&#8634; фото</span></span>
             <span class="label">съёмка<span class="sub">механик камеры, оператор, гаффер, осветитель, звукорежиссёр, экспорт материала — всё в&nbsp;одном лице</span></span>
           </span>
-          <span class="face back"><img src="images/work-02.jpg" alt="камера и монитор на площадке" loading="lazy"></span>
+          <span class="face back"><img src="images/work-02.jpg" alt="камера и монитор на площадке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">rec</span><span class="flipmark">&#8634; назад</span></span><span class="label">съёмка</span></span></span>
         </span>
       </button>
       <button class="flip" type="button" aria-pressed="false">
         <span class="inner">
           <span class="face front pink">
-            <span class="meta"><span class="tc">edit only</span><span class="flipmark">↺ фото</span></span>
+            <span class="meta"><span class="tc">edit only</span><span class="flipmark">&#8634; фото</span></span>
             <span class="label">монтаж<span class="sub">нарезка видео, наложение звуковых и&nbsp;визуальных эффектов, цветокоррекция и&nbsp;двухмерная графика</span></span>
           </span>
-          <span class="face back"><img src="images/work-03.jpg" alt="монтажная станция на съёмке" loading="lazy"></span>
+          <span class="face back"><img src="images/work-03.jpg" alt="монтажная станция на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">edit only</span><span class="flipmark">&#8634; назад</span></span><span class="label">монтаж</span></span></span>
         </span>
       </button>
                       </div>
   </section>
+  <section class="sec" id="past">
+    <div class="head-row"><h2 class="giant">предыдущий опыт</h2><span class="tc">нажми на плитку — покажу кадр</span></div>
+    <div class="grid">
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="inner">
+          <span class="face front">
+            <span class="meta"><span class="tc">rec</span><span class="flipmark">&#8634; фото</span></span>
+            <span class="label">продюсирование youtube-канала крупного криптовалютного медиа: с&nbsp;1 500 подписчиков до&nbsp;30 000 за&nbsp;год</span>
+          </span>
+          <span class="face back"><img src="images/past-01.jpg" alt="кадр с ютуб-канала криптомедиа" loading="lazy"><span class="ov"><span class="meta"><span class="tc">rec</span><span class="flipmark">&#8634; назад</span></span><span class="label">продюсирование youtube-канала крупного криптовалютного медиа: с&nbsp;1 500 подписчиков до&nbsp;30 000 за&nbsp;год</span></span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="inner">
+          <span class="face front cyan">
+            <span class="meta"><span class="tc">mcu</span><span class="flipmark">&#8634; фото</span></span>
+            <span class="label">продюсирование рекламных и&nbsp;корпоративных видео в&nbsp;продакшене: втб, норникель, case, токио-сити</span>
+          </span>
+          <span class="face back"><img src="images/past-02.jpg" alt="съёмка рекламного ролика case в павильоне" loading="lazy"><span class="ov"><span class="meta"><span class="tc">mcu</span><span class="flipmark">&#8634; назад</span></span><span class="label">продюсирование рекламных и&nbsp;корпоративных видео в&nbsp;продакшене: втб, норникель, case, токио-сити</span></span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="inner">
+          <span class="face front">
+            <span class="meta"><span class="tc">fpv</span><span class="flipmark">&#8634; фото</span></span>
+            <span class="label">съёмка на&nbsp;fpv-дрон<span class="sub">сотни часов налёта, но&nbsp;пока это под запретом</span></span>
+          </span>
+          <span class="face back"><img src="images/past-03.jpg" alt="полёт fpv-дрона на съёмке" loading="lazy"><span class="ov"><span class="meta"><span class="tc">fpv</span><span class="flipmark">&#8634; назад</span></span><span class="label">съёмка на&nbsp;fpv-дрон</span></span></span>
+        </span>
+      </button>
+    </div>
+  </section>
+
 </div>
 
 <section class="dark" id="how">
